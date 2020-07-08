@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SMS Spam Detection</title>
+    <link rel"stylesheet" type="text/css" href="style.css">
+    <body background="https://www.marketplace.org/wp-content/uploads/2017/08/spam.jpg?fit=1800%2C1000">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0px;
+    padding:0px
+    font-family: 'josefin Sans',sans-serif;
+}
+
+.bgimage{
+    background-color:rgba(0,0,0,0.3);
+    background-size: 100% 110%;
+    width: 100%;
+    height: 100vh;
+}
+.menu{
+    width:200%;
+    height:100px;
+    background-color:rgba(255,69,0,0.5);
+  }
+.leftmenu{
+    width:500%;
+    line-height:100px;
+    float: left;
+}
+.leftmenu h3{
+    padding-left:90px;
+    color:white;
+    font-size:60px;
+    font-family: 'josefin Sans',sans-serif;
+}
+
+.leftmenu h2{
+    padding-left:50px;
+    width:500%;
+    font-weight:bold;
+    color:white;
+    font-size:25px;
+    margin-bottom:0px;
+    font-family: 'josefin Sans',sans-serif;
+    background-color:rgba(255,69,0,0.5);
+    font-line height:40px;
+    padding-bottom:0%
+}
+
+
+.text{
+    width:100%;
+    margin-top:185px;
+    text-align:center;
+    font-weight:bold;
+    color:black;
+}
+
+.text h2{
+    font-size:40px;
+    font-family:'josefin Sans',sans-serif;
+    text-align:centre;
+    font-weight:bold;
+}
+.b{
+    width:100%;
+    margin-top:90px;
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+    color:black;
+    font-family:'josefin Sans',sans-serif;
+}
+
+#button{
+    border:none;
+    font-size:20px;
+    font-weight:bold;
+    line height:40px;
+    width:150px;
+    color:coral;
+}
+
+input{
+    width:300px;
+    height:50px;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    box-sizing:border-box;
+}
+
+</style>   
+ 
+</head>
+<body>
+<form action="{{ url_for('y_predict')}}" method="post">
+    <div class="bgimage">
+        <div class="menu">
+            <div class="leftmenu">
+                <h3>SMS Spam Detection</h3>
+                <h2>A Deep Learning model that effectively identifies and handles spam messages</h2>
+            </div>
+        </div>
+        <div class="text">
+            <h2> Enter your message</h2>
+            <main>
+            <div>
+        	<input type="text" align='center' placeholder="" name="tweet" id="rcorners1" required>
+        	
+        	</div>
+            <button id="button">Predict</button> 
+            </main>
+       </div> 
+       <script src="{{ url_for('static',filename='app.js') }}"></script>
+</form>  
+    <div class="b">
+            <br>{{ y_pred }}
+    </div>     
+</body>
+</html>
